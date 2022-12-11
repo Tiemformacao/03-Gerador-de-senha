@@ -1,0 +1,142 @@
+
+/* Configurações gerais */
+* {
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #18181B;
+    width: 100%;
+    height: 100vh; /* É exatamente a altura da tela do navegador, sem gerar barra de rolagem. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* Estilização da imagem */
+.logo {
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+
+/* Estilização da tag main */
+.container-input {
+    max-width: 480px;
+    margin: 14px 0;
+}
+
+
+/* Estilização da tag span que está dentro da tag main */
+.container-input span {
+    color: #fff;
+    font-size: 22px;
+}
+
+
+
+/* Estilização do input tipo ranger */
+.slider {
+     appearance: none; /* Retira a aparência de barra preenchida. O usuário vai mover a bolinha sem ter efeito de preenchimento na barra.*/
+     width: 100%;
+     border-radius: 5px;
+     background: #dfdfdf;
+     height: 18px;
+     outline: none; /* Outline é uma uma linha desenhada fora da borda do elemento. Vamos retirá-la. */
+     margin-top: 8px;
+} 
+
+
+/* Estilização do botão */
+.button-cta {
+   height: 40px; 
+   background-color: #3eb72b;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   margin-top: 40px;
+   color: #fff;
+   font-weight: bold;
+   font-size: 18px;
+}
+
+
+/* Estilização da parte onde vai ser mostrada a senha gerada, no caso, toda div */
+.container-password {
+    max-width: 480px;
+    margin: 14px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* Estilização do título: Sua senha é: */
+.title {
+    text-align: center;
+    color: #fff;
+    font-size: 28px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+/* Estilização da senha que será gerada. */
+.password {
+    height: 50px;
+    background-color: rgba(0,0,0, 0.40);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: 1px solid #313131;
+    transition: transform 0.5s;  /* Tem haver com a estilização do ".password:hover" logo abaixo. Foi colocado lá que, quando o mouse passa por cima da caixa, ela aumenta. No entanto, é um aumento rápido, então, o transition colocado aqui é para suavizar esse aumento, fazendo com que aumente em uma velocidade menor. Podemos colocar a velocidade que quisermos.  */
+}
+
+.password:hover {
+    transform: scale(1.05); /* Quando passa o mouse por cima, o tamanho da caixa onde está a senha gerada aumenta. */
+}
+
+
+/* Estilização da 'Clique na senha para copiar' */
+.tooltip {
+    color: #fff;
+    position: relative;
+    top: 20px;
+    padding: 6px 8px;
+    background: rgb(15,15,15);
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    visibility: hidden; /* Essa propriedade faz com que o campo suma. Seu aparecimento será manipulado logo abaixo com o '.container-password:hover .tooltip'. */
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* Classe que também faz parte da div. */
+.hide {
+    display: none;
+}
+
+
+
+/* Fazendo com que o texto 'Clique na senha para copiar' apareça */
+.container-password:hover .tooltip {
+    /* ".container-password:hover .tooltip": Significa que onde o mouse encostar, pode ser em qualquer lugar da div, o texto que foi escondido acima, vai aparecer.*/
+    visibility: visible;
+    bottom: 50px;
+    opacity: 1;
+}
+
+
+
+
+
+
+

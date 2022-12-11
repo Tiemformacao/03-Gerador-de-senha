@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Gerador de senhas, gerador password"><!--Ser encontrado no google-->
+    <title>Gerador de senha</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <img src="./assets/logo.png" alt="Gerador de senha logo" class="logo">
+    
+    <main class="container-input">
+       
+        <span>Tamanho <span id="valor"> <!--Aqui vai ficar a parte dinâmica, a quantidade de caracteres será mostrada aqui.--> </span> caracteres</span>
+        
+        <input type="range" id="slider" class="slider" min="8" max="25" value="11">
+        <!-- O value com valor 8 significa que quando o usuário entrar na página, já vai estar lá 8 caracteres. -->
+        
+        <button id="button" class="button-cta" onclick="generatePassword()">Gerador de senha</button>
+
+    </main>
+
+    <div id="container-password" class="container-password hide" onclick="copyPassword()">
+        <span class="title">Sua senha é:</span>
+        
+        <span id="password" class="password"> <!-- Aqui vai ficar a senha gerada, que no caso será dinâmica, por isso não tem nada digitado dentro. --> </span>
+       
+        <span class="tooltip" id="tooltip">Clique na senha para copiar.👆</span>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
